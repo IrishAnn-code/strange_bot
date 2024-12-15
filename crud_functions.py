@@ -28,17 +28,6 @@ def initiate_db_Users():
     connection.commit()
 
 
-def seed_products():
-    products = [
-        ("Рыбий жир", "Маленькая упаковка", 100),
-        ("Рыбий жир", "Средняя упаковка", 200),
-        ("Рыбий жир", "Большая упаковка", 300),
-        ("Рыбий жир", "Две больших упаковки. АКЦИЯ", 400),
-    ]
-    cursor.executemany("INSERT INTO Products (title, description, price) VALUES (?, ?, ?)", products)
-    connection.commit()
-
-
 def get_all_products():
     cursor.execute('SELECT * FROM Products')
     products = cursor.fetchall()
